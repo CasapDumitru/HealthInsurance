@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190110080943_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110080943_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110093414_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110093414_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110093537_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110093537_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110093640_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110093640_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110093955_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110093955_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110095012_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110095012_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110121848_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110121848_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110122112_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110122112_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110122313_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110122313_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110122418_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110122418_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190110123635_AddReviewsAddressAndUserExperience.cs" />
+    <Compile Remove="Migrations\20190110123635_AddReviewsAddressAndUserExperience.Designer.cs" />
+    <Compile Remove="Migrations\20190111080954_AddMedicineSpecialityInsteadEnumValues.cs" />
+    <Compile Remove="Migrations\20190111080954_AddMedicineSpecialityInsteadEnumValues.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0-preview.18572.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0-preview.18572.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0-preview.18572.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.0.0-preview.18572.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview.18572.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Migrations\20190109110221_Initial.Designer.cs">
+      <DependentUpon>20190109110221_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Migrations\20190110130157_AddReviewsAddressAndUserExperience.Designer.cs">
+      <DependentUpon>20190110130157_AddReviewsAddressAndUserExperience.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Migrations\20190110144727_ConfigureProprietesWithFluentApi.Designer.cs">
+      <DependentUpon>20190110144727_ConfigureProprietesWithFluentApi.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Migrations\20190111081106_AddMedicineSpecialityInsteadEnumValues.Designer.cs">
+      <DependentUpon>20190111081106_AddMedicineSpecialityInsteadEnumValues.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Migrations\20190113103356_AddUniqueContraints.Designer.cs">
+      <DependentUpon>20190113103356_AddUniqueContraints.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
