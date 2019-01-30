@@ -42,10 +42,6 @@ namespace HealthInsurance.Api.Exceptions
 
             _logger.LogError(exception.Message);
 
-            /*if (exception is MyNotFoundException) code = HttpStatusCode.NotFound;
-            else if (exception is MyUnauthorizedException) code = HttpStatusCode.Unauthorized;
-            else if (exception is MyException) code = HttpStatusCode.BadRequest;*/
-
             var result = JsonConvert.SerializeObject(new { error = exception.Message });
 
             context.Response.ContentType = "application/json";
