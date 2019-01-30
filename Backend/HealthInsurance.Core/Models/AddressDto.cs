@@ -20,7 +20,7 @@ namespace HealthInsurance.Core.Models
         [StringLength(30, MinimumLength = 3, ErrorMessage = "The Country name length must be greater that 3 and smaller that 30")]
         public string Country { get; set; }
 
-        [[Required(ErrorMessage = "You should fill out a City")]
+        [Required(ErrorMessage = "You should fill out a City")]
         [StringLength(30, MinimumLength = 3, ErrorMessage = "The City name length must be greater that 3 and smaller that 30")]
         public string City { get; set; }
 
