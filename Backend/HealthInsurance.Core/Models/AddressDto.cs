@@ -42,7 +42,6 @@ namespace HealthInsurance.Core.Models
 
     }
 
-
     // DTO Model for UPDATE
     public class AddressForUpdateDto : AddressForManipulationDto
     {

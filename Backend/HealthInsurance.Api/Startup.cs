@@ -1,22 +1,22 @@
-﻿using HealthInsurance.Core.Interfaces.Specifications;
+﻿using AutoMapper;
+using HealthInsurance.Api.ActionFilters;
+using HealthInsurance.Api.Exceptions;
+using HealthInsurance.Core.Data;
 using HealthInsurance.Core.Interfaces.Services;
+using HealthInsurance.Core.Interfaces.Specifications;
 using HealthInsurance.Core.Repositories;
 using HealthInsurance.Core.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
-using System.IO;
 using System;
-using HealthInsurance.Core.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Formatters;
-using AutoMapper;
-using HealthInsurance.Api.Exceptions;
-using HealthInsurance.Api.ActionFilters;
+using System.IO;
+using System.Reflection;
 
 namespace HealthInsurance.Api
 {

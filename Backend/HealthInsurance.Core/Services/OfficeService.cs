@@ -7,6 +7,7 @@ using HealthInsurance.Core.Specifications;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HealthInsurance.Core.Exceptions;
+using Microsoft.Extensions.Logging;
 
 namespace HealthInsurance.Core.Services
 {
@@ -15,12 +16,14 @@ namespace HealthInsurance.Core.Services
 		private IMapper _mapper;
         private IUnitOfWork _unitOfWork;
 		private IRepository _repository;
+        private ILogger _logger;
 
-        public OfficeService(IUnitOfWork unitOfWork, IMapper mapper)
+        public OfficeService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<OfficeService> logger)
         {
-			_mapper = mapper;
             _unitOfWork = unitOfWork;
 			_repository = unitOfWork.Repository;
+            _mapper = mapper;
+            _logger = logger;
         }
 
 		public async Task<IReadOnlyList<OfficeDto>> GetAll()
@@ -45,6 +48,7 @@ namespace HealthInsurance.Core.Services
 		public async Task<OfficeDto> GetFullById(int id)
 		{
 			var specification = new FullOfficeByIdSpecification(id);
+
 			var office = await _repository.GetSingleBySpecification(specification);
 
             if (office == null)
@@ -60,6 +64,7 @@ namespace HealthInsurance.Core.Services
 		public async Task<IReadOnlyList<OfficeDto>> SearchByName(string name)
 		{
 			var specification = new OfficeByNameSpecification(name);
+
 			var offices = await _repository.GetBySpecification(specification);
 
 			return _mapper.Map<IReadOnlyList<OfficeDto>>(offices);
@@ -89,9 +94,12 @@ namespace HealthInsurance.Core.Services
 		{
 			var office = _repository.GetById<Office>(id);
 
-			if(office != null)
-				_repository.Delete(office.Result);
+            if (office == null)
+            {
+                throw new NotFoundException($"Office with Id = {id} is not found");
+            }
 
+			_repository.Delete(office.Result);
 			await _unitOfWork.SaveChanges();
 
 			return _mapper.Map<OfficeDto>(office);
